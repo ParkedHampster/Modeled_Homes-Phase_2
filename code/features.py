@@ -16,10 +16,10 @@ def has_feature(feature):
     # value from True or False to 1 or 0 respectively
     return (feature>0)+0
 
-def ytick_convert(count,by):
+def ytick_convert(count,by,qty=''):
     tickrange = range(by,count*by+1,by)
     tick_vals = [value for value in tickrange]
-    converted_ticks = [f'${value/1000000:.1f}M' for value in tick_vals]
+    converted_ticks = [f'${value/1000000:.1f}{qty}' for value in tick_vals]
     return (
         tick_vals, converted_ticks
     )
